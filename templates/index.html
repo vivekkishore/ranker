@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rank user</title>
+</head>
+
+<body>
+
+    <div style="color:white">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Predict impact socre</h2>
+
+
+            <h3>Select from meeting details below</h3><select name="meeting_detail" id="meeting" required="required">
+                <option value="people lead connect - discuss queries">people lead connect - discuss queries</option>
+                <option value="User login issue - client call">User login issue - client call</option>
+                <option value="troubleshooting call - login issue">troubleshooting call - login issue</option>
+                <option value="Agile scrum KT call">Agile scrum KT call</option>
+                <option value="java training call">java training call</option>
+                <option value="Test team status call">Test team status call</option>
+                <option value="new vendor onboarding call">new vendor onboarding call</option>
+                <option value="weekly status call">weekly status call</option>
+                <option value="scrum call SAP project">scrum call SAP project</option>
+                <option value="Java proect KT call">Java proect KT call</option>
+
+            </select>
+
+            <h3>Select job profile from below</h3><select name="job_profile" id="profile" required="required">
+                <option value="Packaged App Development Analyst">Packaged App Development Analyst</option>
+                <option value="Business Interlock Manager">Business Interlock Manager</option>
+                <option value="custom software engineering analyst">custom software engineering analyst</option>
+                <option value="Tech Architecture Manager">Tech Architecture Manager</option>
+                <option value="People Advisor Analyst">People Advisor Analyst</option>
+                <option value="Custom Software Engineering Specialist">Custom Software Engineering Specialist</option>
+                <option value="Quality Engineering Associate Manager">Quality Engineering Associate Manager</option>
+                <option value="Quality Engineering Team Lead">Quality Engineering Team Lead</option>
+                <option value="Talent Strategy Senior Manager">Talent Strategy Senior Manager</option>
+                <option value="SW/App/Cloud Tech Support Assoc Manager">SW/App/Cloud Tech Support Assoc Manager</option>
+                <option value="Vendor Management Specialist">Vendor Management Specialist</option>
+                <option value="custom software engineering associate manager">custom software engineering associate manager</option>
+
+            </select>
+
+            <h3>Select job family from below</h3><select name="job_family" id="family" required="required">
+                <option value="Human Resources > Talent Strategy">Human Resources > Talent Strategy</option>
+                <option value="Training & Development > Business Interlock">Training & Development > Business Interlock</option>
+                <option value="Software Engineering > Custom Software Engineering">Software Engineering > Custom Software Engineering</option>
+                <option value="Technology & Information Architectures > Technology Architecture">Technology & Information Architectures > Technology Architecture</option>
+                <option value="Software Engineering > Quality Engineering Architecture">Software Engineering > Quality Engineering Architecture</option>
+                <option value="Sourcing & Procurement Services > Vendor Management">Sourcing & Procurement Services > Vendor Management</option>
+                <option value="Software Engineering > Packaged Application Development">Software Engineering > Packaged Application Development</option>
+                <option value="Information Technology Operations > Software/Application/Cloud Tech Support">Information Technology Operations > Software/Application/Cloud Tech Support</option>
+                <option value="Software Engineering > Quality Engineering">Software Engineering > Quality Engineering</option>
+                <option value="Human Resources > People Advisor">Human Resources > People Advisor</option>
+
+            </select>
+
+            <h3>Input Overall career experience below (in years)</h3>
+            <input id="first" name="overall_exp" type="number ">
+
+            <h3>Select employee primary skill from below</h3><select name="primary_skill" id="primary" required="required">
+                <option value="Microsoft ASP.NET">Microsoft ASP.NET</option>
+                <option value="Automated Testing">Automated Testing</option>
+                <option value="Behavioral Sciences">Behavioral Sciences</option>
+                <option value=".NET Architecture">.NET Architecture</option>
+                <option value="Advance Front End Development NodeJs">Advance Front End Development NodeJs</option>
+                <option value="ASP.NET MVC">ASP.NET MVC</option>
+                <option value="Microsoft Azure Machine Learning">Microsoft Azure Machine Learning</option>
+                <option value="SAP ABAP Development">SAP ABAP Development</option>
+                <option value="Java Enterprise Edition">Java Enterprise Edition</option>
+                <option value="Angular">Angular</option>
+                <option value="Applications Architecture">Applications Architecture</option>
+                <option value="Business Operation Management">Business Operation Management</option>
+                <option value="Stakeholder Management">Stakeholder Management</option>
+                <option value="Communications Development and Delivery">Communications Development and Delivery</option>
+                <option value="Microsoft Functional Testing">Microsoft Functional Testing</option>
+            </select>
+
+            <h3>Select employee secondary skill from below</h3><select name="secondary_skill" id="secondary" required="required">
+                <option value="Avanade Scrum Project Management">Avanade Scrum Project Management</option>
+                <option value="Vendor Management">Vendor Management</option>
+                <option value="Agile Team Practices">Agile Team Practices</option>
+                <option value="Jakarta Enterprise Beans">Jakarta Enterprise Beans</option>
+                <option value="Angular">Angular</option>
+                <option value="SAP for Utilities">SAP for Utilities</option>
+                <option value="Microsoft Avanade Agile Framework (AAF)">Microsoft Avanade Agile Framework (AAF)</option>
+                <option value="IT Troubleshooting">IT Troubleshooting</option>
+                <option value="Quality Engineering Strategy Implementation">Quality Engineering Strategy Implementation</option>
+                <option value="Candidate Relationship Management">Candidate Relationship Management</option>
+                <option value="Culture Strategy">Culture Strategy</option>
+                <option value="Amazon Web Services (AWS)">Amazon Web Services (AWS)</option>
+                <option value="Architectural Design">Architectural Design</option>
+                <option value="ASP.NET MVC">ASP.NET MVC</option>
+
+            </select>
+
+            <h3>Certification completed by the user, select from below</h3><select name="certification" id="certification" required="required">
+                <option value="Scrum">Scrum</option>
+                <option value="Azure">Azure</option>
+                <option value="management">management</option>
+                <option value="Selenium">Selenium</option>
+                <option value="java">java</option>
+                <option value="Google cloud">Google cloud</option>
+                <option value="AWS">AWS</option>
+                <option value="front end">front end</option>
+                <option value="SAP">SAP</option>
+
+            </select>
+        
+            <h3>Input current organisation experience below (in years)</h3>
+            <input id="second" name="org_experience" type="number ">
+        
+            <h3>Input TQ Score</h3>
+            <input id="third" name="score" type="number" min="0" max="12" step="1">
+
+            <h3>Select Employment type</h3><select name="emp_type" id="emptype" required="required">
+                <option value="full time">full time</option>
+                <option value="part time">part time</option>
+            </select>
+
+            <h3>Select management level</h3><select name="level" id="level" required="required">
+                <option value="12-Associate">12-Associate</option>
+                <option value="11-Analyst">11-Analyst</option>
+                <option value="10-Senior Analyst">10-Senior Analyst</option>
+                <option value="9-Team Lead/Consultant">9-Team Lead/Consultant</option>
+                <option value="8-Associate Manager">8-Associate Manager</option>
+                <option value="7-Manager">7-Manager</option>
+                <option value="6-Senior Manager">6-Senior Manager</option>
+                <option value="5 and above">5 and above</option>
+
+            </select>
+
+            <h3>Select specialization from below</h3><select name="specialization" id="specialization" required="required">
+                <option value="Azure">Azure</option>
+                <option value="SAP">SAP</option>
+                <option value="Microsoft backend">Microsoft backend</option>
+                <option value="Cloud">Cloud</option>
+                <option value="Google cloud">Google cloud</option>
+                <option value="Microsoft frontend">Microsoft frontend</option>
+                <option value="AWS">AWS</option>
+                <option value="project management">project management</option>
+
+            </select>
+
+            <h3>Select completed training from below</h3><select name="training" id="training" required="required">
+                <option value="Azure">Azure</option>
+                <option value="google cloud">google cloud</option>
+                <option value="Java">Java</option>
+                <option value="SAP">SAP</option>
+                <option value="angular">angular</option>
+                <option value="dot net">dot net</option>
+                <option value="management">management</option>
+            </select>
+
+            <h3>Select highest qualification from below</h3><select name="qualification" id="qualification" required="required">
+                <option value="mca">mca</option>
+                <option value="bca">bca</option>
+                <option value="mba">mba</option>
+                <option value="btech">btech</option>
+
+            </select>
+
+            <h3>Select the coutry code from below</h3><select name="country" id="country" required="required">
+                <option value="IN">IN</option>
+                <option value="PH">PH</option>
+                <option value="SL">SL</option>
+                <option value="US">US</option>
+                <option value="CN">CN</option>
+            </select>
+
+            <h3>User required/optional in the meeting invite</h3><select name="status" id="status" required="required">
+                <option value="required">Required</option>
+                <option value="optional">Optional</option>
+            </select>
+
+            <h3>User name mentioned in meeting invite?</h3><select name="mention" id="mention" required="required">
+                <option value="yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <h3>Meeting is series/instance?</h3><select name="series" id="series" required="required">
+                <option value="series">Series</option>
+                <option value="instance">Instance</option>
+            </select>
+
+            <h3>User have emails on similar context?</h3><select name="similar" id="similar" required="required">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                
+            </select>
+
+
+
+            <br><br><br><button id="sub" type="submit ">Calculate the impact score</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: rgb(20,83,154);
+            text-align: center;
+            padding: 0px;
+        }
+
+        #first {
+            width: 100px;
+            height: 25px;
+            border-radius: 12px;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        #second {
+            width: 100px;
+            height: 25px;
+            border-radius: 12px;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        #third {
+            width: 100px;
+            height: 25px;
+            border-radius: 12px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        #meeting {
+            width: 250px;
+            height: 35px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 12px;
+        }
+        
+        #meeting:hover {
+            background-color: coral;
+        }
+
+        #profile {
+            width: 250px;
+            height: 35px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 12px;
+        }
+        
+        #profile:hover {
+            background-color: coral;
+        }
+
+        #family {
+            width: 430px;
+            height: 35px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 12px;
+        }
+        
+        #family:hover {
+            background-color: coral;
+        }
+
+        #primary {
+            width: 300px;
+            height: 35px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 12px;
+        }
+        
+        #primary:hover {
+            background-color: coral;
+        }
+
+        #secondary {
+            width: 300px;
+            height: 35px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 12px;
+        }
+        
+        #secondary:hover {
+            background-color: coral;
+        }
+
+        #certification {
+            width: 140px;
+            height: 30px;
+            text-align: center;
+            border-radius: 12px;
+            font-size: 14px;
+        }
+        
+        #certification:hover {
+            background-color: coral;
+        }
+
+        #emptype {
+            width: 140px;
+            height: 30px;
+            text-align: center;
+            border-radius: 12px;
+            font-size: 14px;
+        }
+        
+        #emptype:hover {
+            background-color: coral;
+        }
+
+        #level {
+            width: 200px;
+            height: 30px;
+            text-align: center;
+            border-radius: 12px;
+            font-size: 14px;
+        }
+        
+        #level:hover {
+            background-color: coral;
+        }
+
+        #specialization {
+            width: 140px;
+            height: 30px;
+            text-align: center;
+            border-radius: 12px;
+            font-size: 14px;
+        }
+        
+        #specialization:hover {
+            background-color: coral;
+        }
+
+        #training {
+            width: 140px;
+            height: 30px;
+            text-align: center;
+            border-radius: 12px;
+            font-size: 14px;
+        }
+        
+        #training:hover {
+            background-color: coral;
+        }
+
+        #qualification {
+            width: 140px;
+            height: 30px;
+            text-align: center;
+            border-radius: 12px;
+            font-size: 14px;
+        }
+        
+        #qualification:hover {
+            background-color: coral;
+        }
+
+        #country {
+            width: 140px;
+            height: 30px;
+            text-align: center;
+            border-radius: 12px;
+            font-size: 14px;
+        }
+        
+        #country:hover {
+            background-color: coral;
+        }
+
+        #status {
+            width: 140px;
+            height: 30px;
+            text-align: center;
+            border-radius: 12px;
+            font-size: 14px;
+        }
+        
+        #status:hover {
+            background-color: coral;
+        }
+
+        #mention {
+            width: 140px;
+            height: 30px;
+            text-align: center;
+            border-radius: 12px;
+            font-size: 14px;
+        }
+        
+        #mention:hover {
+            background-color: coral;
+        }
+
+        #series {
+            width: 140px;
+            height: 30px;
+            text-align: center;
+            border-radius: 12px;
+            font-size: 14px;
+        }
+        
+        #series:hover {
+            background-color: coral;
+        }
+
+        #similar {
+            width: 140px;
+            height: 30px;
+            text-align: center;
+            border-radius: 12px;
+            font-size: 14px;
+        }
+        
+        #similar:hover {
+            background-color: coral;
+        }
+
+        
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 20px;
+            font-size: 12px;
+            background-color:rgb(rgb(76, 98, 90))
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+        
+       
+    </style>
+</body>
+
+</html>
